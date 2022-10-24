@@ -3,45 +3,43 @@ accelerator:
   description: Python Accelerator
   iconUrl: https://raw.githubusercontent.com/TanzuDK/python-accelerator/main/images/python.png
   tags:
-  - python
+    - python
+    - streamlit
+    - web
 
   options:
-  - name: deploymentType
-    inputType: select
-    choices:
-    - value: workload
-      text: TAP workload
-    - value: k8s-simple
-      text: Kubernetes deployment and service
-    defaultValue: workload
-    required: true
-  - name: minscale
-    inputType: select
-    label: Minimum scaledown
-    description: The minimum pods to scale to
-    choices:
-    - value: "1"
-      text: 1 Pod
-    - value: "0"
-      text: 0 Pod
-    defaultValue: "1"
-    dependsOn:
-      name: deploymentType
-      value: workload
-  - name: giturl
-    inputType: text
-    label: Git Repository
-    description: The target git repository, where the code will be stored
-    defaultValue: https://github.com/TanzuDK/python-accelerator.git
-  - name: gitbranch
-    inputType: text
-    label: Git Repository branch
-    description: The target git repositorys branch, where the code will be stored
-    defaultValue: main
-  
-
-
-
+    - name: deploymentType
+      inputType: select
+      choices:
+        - value: workload
+          text: TAP workload
+        - value: k8s-simple
+          text: Kubernetes deployment and service
+      defaultValue: workload
+      required: true
+    - name: minscale
+      inputType: select
+      label: Minimum scaledown
+      description: The minimum pods to scale to
+      choices:
+        - value: "1"
+          text: 1 Pod
+        - value: "0"
+          text: 0 Pod
+      defaultValue: "1"
+      dependsOn:
+        name: deploymentType
+        value: workload
+    - name: giturl
+      inputType: text
+      label: Git Repository
+      description: The target git repository, where the code will be stored
+      defaultValue: https://github.com/TanzuDK/python-accelerator.git
+    - name: gitbranch
+      inputType: text
+      label: Git Repository branch
+      description: The target git repositorys branch, where the code will be stored
+      defaultValue: main
 
 engine:
   merge:
