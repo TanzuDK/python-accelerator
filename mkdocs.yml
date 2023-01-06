@@ -1,0 +1,8 @@
+site_name: "Python Accelerator"
+
+nav:
+  - The Application: index.md
+  - Links: links.md
+
+plugins:
+  - techdocs-core
